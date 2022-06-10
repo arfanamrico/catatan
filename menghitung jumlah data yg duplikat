@@ -1,0 +1,16 @@
+=========hasilnya masuk kedalam list 1 dimensi=============
+angka = [3,5,7,9,3,5,4,2,9,8,2,9,7,8,6,9]
+hasil = [print(f"angka {x} jumlah {angka.count(x)}") for x in set(angka)]
+
+======hasilnya masuk kedalam list 2 dimensi===========================
+hasil = []
+angka = [3,5,7,9,3,5,4,2,9,8,2,9,7,8,6,9]
+for x in set(angka):
+  hasil.append((x, angka.count(x)))
+print (hasil)
+
+======hasil nya masuk kedalam list 2 dimensi=========================
+angka = [3,5,7,9,3,5,4,2,9,8,2,9,7,8,6,9]
+hasil = [ (x, angka.count(x)) for x in set(angka) ]
+print(hasil)
+========================================
