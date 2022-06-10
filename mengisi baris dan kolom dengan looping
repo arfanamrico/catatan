@@ -1,0 +1,5 @@
+=====mengisi baris dan colom pada sheet dengan looping=========
+pdp = []
+for value in pdp:
+    for index, huruf in enumerate('ABCDEFG'):
+        ws[f'{huruf}{bar2}'] = value[index]
