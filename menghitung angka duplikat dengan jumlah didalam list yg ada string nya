@@ -1,0 +1,5 @@
+data = [['MS1',5],['MS1',7],['MS1',5],['MS1',7],['MS1',5],['MS1',4],['MS1',2],['MS1',9],['MS1',4],['MS1',2],['MS1',3],['MS1',7],['MS1',8],['MS1',9]]
+hasil = [[x[0],x[1], data.count(x)]for x in data] 
+hasilb = [list(hasil) for hasil in set([tuple(x) for x in hasil])]
+for i in hasilb:
+  print (i)
