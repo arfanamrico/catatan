@@ -1,0 +1,17 @@
+import os
+from os import listdir
+from os.path import isfile, join
+
+def get_all_directory ():
+  return [name for name in os.listdir(".") if os.path.isdir(name)]
+
+def get_all_filename(path):
+  return [f for f in os.listdir(path) if isfile(join(path, f))]
+
+folder = get_all_directory()
+
+for i in folder:
+  print(f'\nFolder : {i}')
+  files = get_all_filename(i)
+  for f in files:
+    print(f'\t- {f}')
