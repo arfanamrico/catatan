@@ -15,3 +15,49 @@ for i in folder:
   files = get_all_filename(i)
   for f in files:
     print(f'\t- {f}')
+
+
+=======cara lain nya===============
+
+import csv
+import os
+import pathlib
+
+
+
+reader = csv.reader # yang ini hasilnya list
+reader = csv.DictReader # yang ini hasilnya dict
+
+
+# menggunakan module os {{{
+dirpath = '/folder/tujuan'
+rows = []
+for name in os.listdir(dirpath):
+    path = os.path.join(dirpath, name)
+    if os.path.isfile(path):
+        rows.extend(reader(open(path)))
+
+# listcomp
+rows = [ row for name in os.listdir(dirpath) if os.path.isfile(path := os.path.join(dirpath, name)) for row in reader(open(path)) ]
+# }}}
+
+
+# menggunakan module pathlib {{{
+rows = []
+dirpath = pathlib.Path('/folder/tujuan')
+for path in dirpath.iterdir():
+    if path.is_file():
+        rows.extend(reader(path.open()))
+
+
+# listcomp
+rows = [ row for path in dirpath.iterdir() if path.is_file() for row in reader(path.open()) ]
+# }}}
+
+
+# filter(dirpath.is_file, dirpath.iterdir())
+# (path for path in dirpath.iterdir() if dirpath.is_file())
+
+
+
+# vim: foldenable foldmethod=marker
