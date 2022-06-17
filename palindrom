@@ -1,0 +1,24 @@
+def palindrome(target):
+    depan = []
+    belakang = []
+    hasil = []
+
+    for i in range(len(target) - 1):
+        for j in range(len(target) - 1):
+            if len(target[i:j+2]) >= 3:
+                depan.append(target[i:j+2].lower())
+                belakang.append(target[i:j+2][::-1].lower())
+   
+    for i in depan:
+        if i in belakang:
+            hasil.append(i)
+    
+    if not hasil:
+        return "tidak ada palindrome"
+
+    return max(hasil, key=len)
+
+while True:
+    t = input("Masukan kata / kalimat : ")
+    print(palindrome(t))
+    print("-----------")
