@@ -1,3 +1,11 @@
+========gini doang bisa======
+import os
+direc = os.listdir('E:\Test')
+rows = []
+for pile in direc:
+    print(pile)
+===============================
+
 import os
 from os import listdir
 from os.path import isfile, join
