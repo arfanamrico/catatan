@@ -1,3 +1,14 @@
+====membaca semua file didalam sebuah folder==========
+import os
+path_menuju_folder = "E:\Test"
+files = os.listdir(path_menuju_folder)
+def open_file(path):
+    with open(path) as f: return f.read()
+for i in files[:-1]:
+    print(f'\n namafile >> {i}')
+    print(open_file(f'{path_menuju_folder}/{i}'))
+
+
 ========gini doang bisa======
 import os
 direc = os.listdir('E:\Test')
