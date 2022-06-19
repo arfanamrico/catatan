@@ -2,9 +2,17 @@
 import os
 path_menuju_folder = "E:\Test"
 files = os.listdir(path_menuju_folder)
+for i in files[:-1]: # [:-1] untuk melewatkan ada nya folder didalamnya
+    f = open(f'{path_menuju_folder}/{i}')
+    print(f.read())
+
+====membaca semua file didalam sebuah folder==========
+import os
+path_menuju_folder = "E:\Test"
+files = os.listdir(path_menuju_folder)
 def open_file(path):
     with open(path) as f: return f.read()
-for i in files[:-1]:
+for i in files[:-1]: # [:-1] untuk melewatkan ada nya folder didalamnya
     print(f'\n namafile >> {i}')
     print(open_file(f'{path_menuju_folder}/{i}'))
 
