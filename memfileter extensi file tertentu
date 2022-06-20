@@ -5,3 +5,13 @@ for name in os.listdir(dirpath):
     path = os.path.join(dirpath, name)
     if path.endswith('.txt') and os.path.isfile(path):
         print(name)
+
+=====================================
+import os
+
+dirpath = 'E:\Test'
+for name in os.listdir(dirpath):
+    path = os.path.join(dirpath, name)
+    if path.endswith('.txt') and os.path.isfile(path): #.txt menandakan hanya akan membaca file .txt
+        cetak = open(f'{dirpath}/{name}', "r")
+        print(cetak.read())
