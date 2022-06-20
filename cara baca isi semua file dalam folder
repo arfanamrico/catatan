@@ -1,3 +1,7 @@
+catatan:
+untuk menjadikan path nya relatif kita gunakan tanda r atau \\ (doble slash) 
+contoh: r'D:\Test' atau 'D:\\Test 
+
 ====membaca semua file didalam sebuah folder==========
 import os
 path_menuju_folder = "E:\Test"
