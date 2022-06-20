@@ -1,0 +1,7 @@
+import os
+
+dirpath = 'E:\Test'
+for name in os.listdir(dirpath):
+    path = os.path.join(dirpath, name)
+    if path.endswith('.txt') and os.path.isfile(path):
+        print(name)
