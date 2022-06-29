@@ -1,0 +1,21 @@
+tbl_id = [
+    {'id':1, 'nama':'arfan'},
+    {'id':2, 'nama':'ashif'},
+    {'id':3, 'nama':'Barra'}
+]
+tbl_divisi = [
+    {'nama':'arfan', 'divisi':'performance'},
+    {'nama':'ashif', 'divisi':'financial'},
+    {'nama':'Barra', 'divisi':'Resource'}
+]
+tbl_jbtn = [
+    {'nama':'arfan', 'jabatan':'manager'},
+    {'nama':'ashif', 'jabatan':'Director'},
+    {'nama':'Barra', 'jabatan':'Head of Division'}
+]
+
+for i in tbl_id:
+    for j in tbl_divisi:
+        for k in tbl_jbtn:
+            if i['nama'] == j['nama'] == k['nama']:
+                print(i['id'], i['nama'], j['divisi'], k['jabatan'])
