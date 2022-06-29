@@ -19,3 +19,40 @@ for i in tbl_id:
         for k in tbl_jbtn:
             if i['nama'] == j['nama'] == k['nama']:
                 print(i['id'], i['nama'], j['divisi'], k['jabatan'])
+                
+====================================================================
+
+tbl_id = [
+    {'id':1, 'nama':'arfan'},
+    {'id':2, 'nama':'ashif'},
+    {'id':3, 'nama':'Barra'}
+]
+tbl_divisi = [
+    {'nama':'arfan', 'divisi':'performance'},
+    {'nama':'ashif', 'divisi':'financial'},
+    {'nama':'Barra', 'divisi':'Resource'}
+]
+tbl_jbtn = [
+    {'nama':'arfan', 'jabatan':'manager'},
+    {'nama':'ashif', 'jabatan':'Director'},
+    {'nama':'Barra', 'jabatan':'Head of Division'}
+]
+data = []
+for i in tbl_id:
+    for j in tbl_divisi:
+        for k in tbl_jbtn:
+            if i['nama'] == j['nama'] == k['nama']:
+                data.append([i['id'], i['nama'], j['divisi'], k['jabatan']])
+
+while True:
+    p = int(input('menu 1.cari 2.keluar: '))
+    if p == 1:
+        cari = input('Cari Nama: ')
+        for c in data:
+            if cari == c[1]:
+                print(f'id: {c[0]}, nama: {c[1]}, divisi: {c[2]}, jabatan: {c[3]}')
+                break
+        else:
+            print('Nama tidak ada')
+    if p == 2:
+        break
