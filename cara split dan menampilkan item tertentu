@@ -4,3 +4,8 @@ print(lis)
 
 ==================
 print(teks.split('-')[-1])
+
+==============================
+distName="beras-gandum/air-susu/ubi-ketela/krupuk-opak/buah-sayur"
+tmp = distName.replace('/','-') #mengganti slash dengan strip
+print(tmp.split('-')) #memisahkan semua strip
