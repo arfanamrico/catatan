@@ -1,0 +1,20 @@
+import xml.etree.ElementTree as ET
+etree = ET.parse('testdump.xml')
+root = etree.getroot()
+status = root.get('type') #untuk mendapatkan nilai actual
+for tgl in root.findall('header'):
+    for chil in tgl:
+        tangal = chil.get('dateTime') #untuk mendapatkan datetime
+for mo in root.findall('managedObject'):
+    versi = mo.get('version')
+    mrbtsid = mo.get('distName').split('-')[-1]
+    #print(f'{mrbtsid} {versi}')
+    for chil in mo:
+        if chil.get('name') == 'btsName':
+            btsnama = chil.text
+        if chil.get('name') == 'name':
+            nama = chil.text
+        else:
+            pass
+        #print(chil.tag, chil.attrib, chil.text)
+    print(f'{mrbtsid} {versi} {btsnama} {nama} {status} {tangal}')
