@@ -1,0 +1,6 @@
+teks = 'PLMN-PLMN/MRBTS-103324'
+lis = teks.split('-')[-1] # [-1]untuk menghasilkan item terakhir setelah di split
+print(lis)
+
+==================
+print(teks.split('-')[-1])
