@@ -5,16 +5,52 @@ status = root.get('type') #untuk mendapatkan nilai actual
 for tgl in root.findall('header'):
     for chil in tgl:
         tangal = chil.get('dateTime') #untuk mendapatkan datetime
+#===================================parsing MRBTS
 for mo in root.findall('managedObject'):
-    versi = mo.get('version')
-    mrbtsid = mo.get('distName').split('-')[-1]
-    #print(f'{mrbtsid} {versi}')
-    for chil in mo:
-        if chil.get('name') == 'btsName':
-            btsnama = chil.text
-        if chil.get('name') == 'name':
-            nama = chil.text
-        else:
-            pass
-        #print(chil.tag, chil.attrib, chil.text)
-    print(f'{mrbtsid} {versi} {btsnama} {nama} {status} {tangal}')
+    if mo.get('class') == 'MRBTS':
+        versi = mo.get('version')
+        mrbtsid = mo.get('distName').split('-')[-1]
+        for chil in mo:
+            if chil.get('name') == 'btsName':
+                btsnama = chil.text
+            if chil.get('name') == 'name':
+                nama = chil.text
+            else:
+                pass
+        print(f'{mrbtsid} {versi} {btsnama} {nama} {status} {tangal}')
+
+#=====================================parsing LNADJL
+for mo in root.findall('managedObject'):
+    if mo.get('class') == 'LNADJL':
+        tmpid = mo.get('distName').replace('/','-')
+        nbrid = tmpid.split('-')
+        mrbtsid = nbrid[3]
+        lnbtsid = nbrid[5]
+        lnadjid = nbrid[7]
+        lnadjlid = nbrid[9]
+        for chil in mo:
+            if chil.get('name') == 'dlTrmBw':
+                dlTrmBw = chil.text
+            if chil.get('name') == 'ecgiAdjEnbId':
+                ecgiAdjEnbId = chil.text
+            if chil.get('name') == 'ecgiLcrId':
+                ecgiLcrId = chil.text
+            if chil.get('name') == 'mcc':
+                mcc = chil.text
+            if chil.get('name') == 'mnc':
+                mnc = chil.text
+            if chil.get('name') == 'fDlEarfcn':
+                fDlEarfcn = chil.text
+            if chil.get('name') == 'fUlEarfcn':
+                fUlEarfcn = chil.text
+            if chil.get('name') == 'phyCellId':
+                phyCellId = chil.text
+            if chil.get('name') == 'sourceOfData':
+                sourceOfData = chil.text
+            if chil.get('name') == 'tac':
+                tac = chil.text
+            if chil.get('name') == 'ulTrmBw':
+                ulTrmBw = chil.text
+
+        print(f'{mrbtsid} {lnbtsid} {lnadjid} {lnadjlid} {dlTrmBw} {ecgiAdjEnbId} {ecgiLcrId} {mcc} {mnc} {fDlEarfcn} {fUlEarfcn} {phyCellId} {sourceOfData} {tac} {ulTrmBw} {status} {tangal}')
+
