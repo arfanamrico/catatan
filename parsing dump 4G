@@ -54,3 +54,22 @@ for mo in root.findall('managedObject'):
 
         print(f'{mrbtsid} {lnbtsid} {lnadjid} {lnadjlid} {dlTrmBw} {ecgiAdjEnbId} {ecgiLcrId} {mcc} {mnc} {fDlEarfcn} {fUlEarfcn} {phyCellId} {sourceOfData} {tac} {ulTrmBw} {status} {tangal}')
 
+=================================================
+for mo in root.findall('managedObject'):
+    if mo.get('class') == 'LNBTS':
+        tmpid = mo.get('distName').replace('/','-')
+        nbrid = tmpid.split('-')
+        mrbtsid = nbrid[3]
+        lnbtsid = nbrid[5]
+        for chil in mo:
+            if chil.get('name') =="mcc": mcc = chil.text
+            if chil.get('name') =="mnc": mnc = chil.text
+            if chil.get('name') =="name": name = chil.text
+            if chil.get('name') =="act1xCsfb": act1xCsfb = chil.text
+            if chil.get('name') =="act8EpsBearers": act8EpsBearers = chil.text
+            if chil.get('name') =="actA3ScellSelect": actA3ScellSelect = chil.text
+            if chil.get('name') =="actAcBarringACS": actAcBarringACS = chil.text
+            if chil.get('name') =="actAcBarringCFR": actAcBarringCFR = chil.text
+            if chil.get('name') =="actAcBarringPlmn": actAcBarringPlmn = chil.text
+            
+            
