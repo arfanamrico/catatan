@@ -1,0 +1,1 @@
+Select * from raw_ioh_4G_daily where date between ='2022-06-01' and `SIte ID` in ('30002','30003','40001')
