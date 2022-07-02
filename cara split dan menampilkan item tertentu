@@ -9,3 +9,7 @@ print(teks.split('-')[-1])
 distName="beras-gandum/air-susu/ubi-ketela/krupuk-opak/buah-sayur"
 tmp = distName.replace('/','-') #mengganti slash dengan strip
 print(tmp.split('-')) #memisahkan semua strip
+===========================================
+distName="PLMN-PLMN/MRBTS-30219/WNBTS-1/WNCEL-31558"
+tmp = [ b for a in distName.split('-') for b in a.split('/')]
+print (tmp)
