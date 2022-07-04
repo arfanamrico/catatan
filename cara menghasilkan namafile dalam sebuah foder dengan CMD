@@ -1,0 +1,2 @@
+#masuk ke folder yg ingin di dapatkan nama file nya kedalam txt
+DIR /B /O:N > filename.txt
