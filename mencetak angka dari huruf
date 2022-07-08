@@ -1,0 +1,3 @@
+teks = input('masukkan teks: ').upper()
+for i in teks:
+  print(f'{i} : {ord(i)}') #syntax ord() untuk mengetahui ascii dari sebuah huruf
