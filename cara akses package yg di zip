@@ -15,3 +15,6 @@ import hello_world
 cara lainya pake exec :
 
 exec(z.read('hello_world.py', 'password').decode())
+
+=======================
+exec(_import_('zipfile').ZipFile('hello_world.zip').read('hello_world.py', 'passwordnya'.encode()))
