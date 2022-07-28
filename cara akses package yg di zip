@@ -1,0 +1,12 @@
+anggap aja nama filenya hello_world.zip
+dan di dalamnya ada file hello_world.py
+
+
+import zipfile
+
+
+z = zipfile.ZipFile('hello_world.zip')
+z.setpassword('passwordnya🗿'.encode())
+z.extractall()
+
+import hello_world
