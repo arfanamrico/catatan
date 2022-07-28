@@ -10,3 +10,8 @@ z.setpassword('passwordnya🗿'.encode())
 z.extractall()
 
 import hello_world
+
+======================
+cara lainya pake exec :
+
+exec(z.read('hello_world.py', 'password').decode())
