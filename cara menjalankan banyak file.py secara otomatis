@@ -1,0 +1,5 @@
+import os
+
+dir = os.listdir(path)
+for z in dir:
+  os.system(f'python {z}')
