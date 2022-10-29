@@ -1,0 +1,7 @@
+data = ['rnc','bts','adje','rnc','adje','bcf','ant','adjw']
+print(data)
+data_unik = set(data)
+print(data_unik)
+print(len(data_unik))
+datac = list(data_unik) #merubah type data set menjadi list
+print(datac[3])
