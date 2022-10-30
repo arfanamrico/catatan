@@ -1,0 +1,7 @@
+import pandas as pd
+data = []
+teks = "PLMN-PLMN/BSC-404549/BCF-197/BTS-197/ADJL-0"
+hasil = dict(word.split('-', 1) for word in  teks.split('/')) #cara split 2 kondisi, split pertama /, split kedua - , hasil nya berupa dictionary
+data.append(hasil)
+df = pd.DataFrame(data)
+print(df)
