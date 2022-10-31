@@ -1,0 +1,12 @@
+import pandas as pd
+
+teks = "PLMN-PLMN/BSC-404549/BCF-197/BTS-197/ADJL-0"
+a = []
+b = {}
+tks = teks.split('/')
+for wo in tks:
+  i = wo.split('-')
+  b.update({f'{i[0]}id':i[1]}) #menambahkan id pada key dictionary
+a.append(b)
+df = pd.DataFrame(a)
+print(df)
