@@ -1,0 +1,37 @@
+import pandas as pd
+
+site = ['KRW646',	'PWK602',	'KRW900']
+
+list = [['KRW646',180,'E_KRW646MG1_Cigunungsari_MG01'],
+['KRW646',181,'E_KRW646MG1_Cigunungsari_MG02'],
+['KRW646',182,'E_KRW646MG1_Cigunungsari_MG03'],
+['KRW646',541,'C_KRW646MD1_Cigunungsari_MD01'],
+['KRW646',542,'C_KRW646MD1_Cigunungsari_MD02'],
+['KRW646',543,'C_KRW646MD1_Cigunungsari_MD03'],
+['PWK602',241,'E_PWK602MG1_Cmumputreloc_MG01'],
+['PWK602',242,'E_PWK602MG1_Cmumputreloc_MG02'],
+['PWK602',243,'E_PWK602MG1_Cmumputreloc_MG03'],
+['PWK602',2403,'C_PWK602MD1_Cmumputreloc_MD03'],
+['PWK602',2404,'C_PWK602MD1_Cmumputreloc_MD01'],
+['PWK602',2405,'C_PWK602MD1_Cmumputreloc_MD02'],
+['KRW900',2393,'C_KRW900MD1_Dbelendung-DMT_MD03'],
+['KRW900',2392,'C_KRW900MD1_Dbelendung-DMT_MD02'],
+['KRW900',2391,'C_KRW900MD1_Dbelendung-DMT_MD01'],
+['KRW900',9,'E_KRW900MG1_Dbelendung-DMT_MG01'],
+['KRW900',19,'E_KRW900MG1_Dbelendung-DMT_MG02'],
+['KRW900',20,'E_KRW900MG1_Dbelendung-DMT_MG03'],
+['BKS650',1073,'E_BKS650MD1_Pejuangestate_MD01'],
+['BKS650',1074,'E_BKS650MD1_Pejuangestate_MD02'],
+['BKS650',1075,'E_BKS650MD1_Pejuangestate_MD03'],
+['BKX090',1076,'E_BKX090MD1_Harapanbulevarhijau-PTI_MD01'],
+['BKX090',1077,'E_BKX090MD1_Harapanbulevarhijau-PTI_MD02'],
+['BKX090',1078,'E_BKX090MD1_Harapanbulevarhijau-PTI_MD03'],
+['BOO679',10,'E_BOO679MG1_Dtmekarsari_MG03'],
+['BKS801',100,'E_BKS801MD1_Cmningbtgbng2-DMT_MD03'],
+['BKS559',1085,'E_BKS559MG1_Setiamulya-TBG_MG01'],
+['CKR091',101,'E_CKR091MD1_Komplekbekasitimurregency2-DMT_MD01'],
+['BKS559',1086,'E_BKS559MG1_Setiamulya-TBG_MG02']]
+#cellist = [ [ b for b in list if b[0] == a ] for a in site ]
+cellistt = [  b for a in site for b in list if b[0] == a ]
+#print(cellist)
+print(pd.DataFrame(cellistt))
