@@ -1,0 +1,3 @@
+#cara masuk mysql melalui CMD
+xampp/mysql/bin>mysql -u root (tekan enter)
+use namadatabase
