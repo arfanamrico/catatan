@@ -1,0 +1,21 @@
+import pandas as pd
+import os
+# import win32com.client 
+
+filename = 'test.xlsx'
+dirpath = r"D:\RO XL\KPI\RO_G1_WEST_KPI_Monitoring-20240813\cekperformance.csv"
+folder = r"D:\RO XL\KPI\RO_G1_WEST_KPI_Monitoring-20240813"
+
+siteid = '4287427E'
+df = pd.read_csv(dirpath)
+df = pd.DataFrame(df)
+df['siteID'] =  df['eNodeB Name'].str.split('_').str[0]
+df.loc[df['LocalCell Id'].isin([1,4,7,11,16,21,24,27,31,34,37,44,47]),'Sector'] = '1'  
+df.loc[df['LocalCell Id'].isin([2,5,8,12,17,22,25,28,32]),'Sector'] = '2'
+df.loc[df['LocalCell Id'].isin([3,6,9,13,18,23,26,29,33]),'Sector'] = '3'
+
+ds = df[df['siteID'] == siteid]
+dg = ds.groupby('Sector')[['HX4_Cell Availability','HX4_DL User Throughput (Mbps)','HX4_Rank2(%)']].mean().reset_index()
+dg = dg.transpose() ##==> merubah index menjadi kolom
+dg.to_excel(f'{folder}/{filename}')
+print(dg)
