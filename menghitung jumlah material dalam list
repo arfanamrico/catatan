@@ -1,0 +1,5 @@
+from collections import Counter
+mateial = ['payung','paku','palu','payung','timba','payung','palu']
+new = Counter(mateial)
+for k,v in new.items():
+    print(f'{v}*{k}')
