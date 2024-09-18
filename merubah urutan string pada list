@@ -1,0 +1,17 @@
+import pandas as pd
+
+band = ['L2300','L1800','L2100','L900']
+cek = []
+if 'L900' not in cek:
+    for b in band:
+        if b == 'L900':cek.append(b)
+if 'L1800' not in cek:
+    for b in band:
+        if b == 'L1800':cek.append(b)
+if 'L2100' not in cek:
+    for b in band:
+        if b == 'L2100':cek.append(b)
+if 'L2300' not in cek:
+    for b in band:
+        if b == 'L2300':cek.append(b)
+print(band,cek)
