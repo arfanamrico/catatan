@@ -1,0 +1,37 @@
+import pandas as pd
+from math import radians, sin, cos, sqrt, atan2
+
+# Read data
+data = pd.read_csv('SITE.csv')
+
+# Haversine formula
+def haversine(lat1, lon1, lat2, lon2):
+    # Convert latitude & longitude ke radians
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+
+    # Haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    distance = 6371 * c  # Radius of Earth kilometers (Konstanta)
+    return distance
+
+# Create a list to store data frames
+dfs = []
+
+# Iterate cari neighbor
+for idx, site in data.iterrows():
+    for idx2, neighbour in data.iterrows():
+        if idx != idx2:  # Exclude site itu sendiri
+            distance = haversine(site['Latitude'], site['Longitude'], neighbour['Latitude'], neighbour['Longitude'])
+            if distance <= 5:  # Check jika distance dalam 5KM
+                dfs.append(pd.DataFrame({'SiteID': [site['SiteID']],
+                                         'NeighbourSiteID': [neighbour['SiteID']],
+                                         'Distance': [distance]}))
+
+# Concatenate 
+results = pd.concat(dfs, ignore_index=True)
+
+# Export 
+results.to_csv('neighbours_within_5km.csv', index=False)
